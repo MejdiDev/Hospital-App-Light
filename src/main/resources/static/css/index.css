@@ -1,0 +1,335 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200;300;400;500&family=Merriweather:wght@300;400;700&family=Montserrat:wght@200;300;400;500;600&display=swap');
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #04B4FC;
+    border-radius: 8px;
+    -webkit-box-shadow: 0 0 4px rgb(0 0 0 / 50%);
+    box-shadow: 0 0 4px rgb(0 0 0 / 50%);
+}
+
+::-webkit-scrollbar-track {
+    background: #CED4DA;
+}
+
+body {
+    background: #FFFFFF;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-y: scroll;
+    font-family: "Karla", sans-serif;
+}
+
+#floatingwrapper {
+    top: 0;
+    left: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 300ms ease-in-out;
+    z-index: 999;
+
+    &.active {
+        display: flex;
+    }
+}
+
+.formWrapperWindow {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+#floatingwrapper form {
+    width: 100%;
+}
+
+.formWrapperWindow .buttonWrapper {
+    gap: 20px;
+    width: 100%;
+    height: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.formWrapperWindow {
+    border-radius: 10px;
+    padding: 30px 40px;
+    width: 30%;
+    background: #F4F5FC;
+    display: none;
+}
+
+.formWrapperWindow h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+    margin-bottom: 5px;
+}
+
+#floatingwrapper input {
+    width: calc(100% - 17px);
+    border: none !important;
+    outline: none !important;
+    margin: 0;
+    border-radius: 8px;
+    font-size: 16px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    height: 35px;
+    font-size: 18px;
+}
+
+#floatingwrapper .buttonWrapper p, #floatingwrapper .buttonWrapper button {
+    height: 30px;
+    border-radius: 8px;
+    background: #04B4FC;
+    width: 100px;
+    border: none !important;
+    outline: none !important;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    font-family: 'Exo', sans-serif;
+    cursor: pointer;
+    filter: brightness(1);
+    transition: filter 200ms;
+    justify-content: center;
+    font-size: 18px;
+    padding: 5px 10px;
+}
+
+#floatingwrapper .buttonWrapper button {
+    padding: 20px 25px !important;
+}
+
+#floatingwrapper .buttonWrapper p:hover, #floatingwrapper .buttonWrapper button:hover {
+    filter: brightness(.8);
+}
+
+nav {
+    padding: 2px 0;
+    border-bottom: #CED4DA 1px solid;
+    height: 80px;
+    background: #FFFFFF;
+    width: calc(100% - 50px);
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+}
+
+nav img {
+    margin: 0;
+    padding: 0;
+    height: 60px;
+}
+
+main {
+    display: flex;
+    height: 100vh;
+}
+
+main #sidebar {
+    height: 100%;
+    padding-left: 40px;
+    width: calc(20vw - 40px);
+    background: #F4F5FC;
+    border-right: #CED4DA 1px solid;
+}
+
+main #sidebar h4 {
+    font-size: 14px;
+    color: #5C6F88;
+}
+
+main #sidebar .tab {
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    width: 150px;
+    padding: 10px 0;
+    padding-left: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+main #sidebar .tab svg {
+    fill: #5C6F88;
+}
+
+main #sidebar .tab h3 {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    color: #5C6F88;
+}
+
+main #sidebar .tab.active {
+    background: #04B4FC;
+}
+
+main #sidebar .tab.active h3 {
+    color: #FFFFFF;
+}
+
+main #sidebar .tab.active svg {
+    fill: #FFFFFF;
+}
+
+main #container {
+    height: 100%;
+    width: 100%;
+}
+
+main #search {
+    padding: 5px 20px;
+    background: #F4F6FC;
+    width: calc(100% - 40px);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+main #search #inputWrapper img {
+    margin-right: 20px;
+}
+
+main #search #inputWrapper {
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    border: #CED4DA 2px solid;
+}
+
+main #search input {
+    border: none;
+    background: transparent;
+    font-family: "Karla", sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+main #search input::placeholder {
+    color: #5C6F88;
+}
+
+main #search input:focus {
+    outline: none !important;
+}
+
+main #search #buttonWrapper {
+    gap: 2px;
+    background: #04B4FC;
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 0 15px;
+    filter: brightness(1);
+    transition: filter 200ms;
+}
+
+main #search #buttonWrapper:hover{
+    filter: brightness(.8);
+}
+
+main #search #buttonWrapper img {
+    margin-top: 10px;
+    margin-left: -5px;
+    height: 30px;
+}
+
+main #search #buttonWrapper p {
+    color: #FFFFFF;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-family: "Karla", sans-serif;
+}
+
+main #container {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+main #container table {
+    border-collapse:separate;
+    border-spacing: 0 1em;
+    width: 95%;
+}
+
+main #container table tr {
+    background: #F4F5FC;
+}
+
+main #container table thead td {
+    height: auto !important;
+    padding: 10px 0;
+    font-weight: 600;
+}
+
+main #container table td:first-child {
+    padding-left: 50px;
+}
+
+main #container table thead td:last-child {
+    text-align: center;
+}
+
+main #container table td {
+    height: 80px;
+    background: transparent;
+}
+
+main #container table td button {
+    background: transparent;
+    border: none;
+    outline: none;
+    height: 30px;
+    cursor: pointer;
+    filter: brightness(1);
+    transition: filter 200ms;
+}
+
+main #container table td button:hover {
+    filter: brightness(.6);
+}
+
+main #container table td button svg {
+    height: 30px;
+    fill: #61B937;
+}
+
+main #container table td button svg.delete:first-child {
+    fill: #CB3F3F;
+}
+
+main #container table td:first-child {
+    border-radius: 5px 0 0 5px;
+}
+
+main #container table td:last-child {
+    border-radius: 0 5px 5px 0;
+}
